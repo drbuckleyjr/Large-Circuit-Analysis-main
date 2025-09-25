@@ -1,0 +1,19 @@
+Current S/I sequence for s2:1 (13 entries):
+  1: s1i2
+  2: s2i2
+  3: s3i2
+  4: s12i3
+  5: s13i0
+  6: s14i5
+  7: s14i7
+  8: s15i5
+  9: s16i1
+  10: s17i2
+  11: s18i5
+  12: s18i2
+  13: s19i5
+  14: s23i1
+  15: s29i0
+  16: s30i7
+  17: s31i2
+  18: s0i7

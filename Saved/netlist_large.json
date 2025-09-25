@@ -1,0 +1,1519 @@
+{
+  "circuit_name": "LARGE",
+  "description": "Large circuit netlist extracted from rudd_Large_070925.go",
+  "levels": [
+    {
+      "level": 1,
+      "description": "Primary inputs and first level inverters",
+      "gates": [
+        {
+          "name": "ps16",
+          "type": "PI",
+          "inputs": ["ps16_i"],
+          "outputs": ["ps16_s", "ps16_1"],
+          "fault_targets": ["ps16"]
+        },
+        {
+          "name": "ps8",
+          "type": "PI",
+          "inputs": ["ps8_i"],
+          "outputs": ["ps8_s", "ps8_1"],
+          "fault_targets": ["ps8"]
+        },
+        {
+          "name": "ps4",
+          "type": "PI",
+          "inputs": ["ps4_i"],
+          "outputs": ["ps4_s", "ps4_1"],
+          "fault_targets": ["ps4"]
+        },
+        {
+          "name": "ps2",
+          "type": "PI",
+          "inputs": ["ps2_i"],
+          "outputs": ["ps2_s", "ps2_1"],
+          "fault_targets": ["ps2"]
+        },
+        {
+          "name": "ps1",
+          "type": "PI",
+          "inputs": ["ps1_i"],
+          "outputs": ["ps1_s", "ps1_1"],
+          "fault_targets": ["ps1"]
+        },
+        {
+          "name": "in4",
+          "type": "PI",
+          "inputs": ["null"],
+          "outputs": ["in4_s", "in4_1"],
+          "fault_targets": ["in4"]
+        },
+        {
+          "name": "in2",
+          "type": "PI",
+          "inputs": ["null"],
+          "outputs": ["in2_s", "in2_1"],
+          "fault_targets": ["in2"]
+        },
+        {
+          "name": "in1",
+          "type": "PI",
+          "inputs": ["null"],
+          "outputs": ["in1_s", "in1_1"],
+          "fault_targets": ["in1"]
+        },
+        {
+          "name": "nps1",
+          "type": "NOT",
+          "inputs": ["ps1_s", "ps1_1"],
+          "outputs": ["nps1_s", "nps1_1"],
+          "fault_targets": ["nps1"]
+        },
+        {
+          "name": "nps2",
+          "type": "NOT",
+          "inputs": ["ps2_s", "ps2_1"],
+          "outputs": ["nps2_s", "nps2_1"],
+          "fault_targets": ["nps2"]
+        },
+        {
+          "name": "nps4",
+          "type": "NOT",
+          "inputs": ["ps4_s", "ps4_1"],
+          "outputs": ["nps4_s", "nps4_1"],
+          "fault_targets": ["nps4"]
+        },
+        {
+          "name": "nps8",
+          "type": "NOT",
+          "inputs": ["ps8_s", "ps8_1"],
+          "outputs": ["nps8_s", "nps8_1"],
+          "fault_targets": ["nps8"]
+        },
+        {
+          "name": "nps16",
+          "type": "NOT",
+          "inputs": ["ps16_s", "ps16_1"],
+          "outputs": ["nps16_s", "nps16_1"],
+          "fault_targets": ["nps16"]
+        },
+        {
+          "name": "nin1",
+          "type": "NOT",
+          "inputs": ["in1_s", "in1_1"],
+          "outputs": ["nin1_s", "nin1_1"],
+          "fault_targets": ["nin1"]
+        },
+        {
+          "name": "nin2",
+          "type": "NOT",
+          "inputs": ["in2_s", "in2_1"],
+          "outputs": ["nin2_s", "nin2_1"],
+          "fault_targets": ["nin2"]
+        },
+        {
+          "name": "nin4",
+          "type": "NOT",
+          "inputs": ["in4_s", "in4_1"],
+          "outputs": ["nin4_s", "nin4_1"],
+          "fault_targets": ["nin4"]
+        },
+        {
+          "name": "i7",
+          "type": "AND3",
+          "inputs": ["in4_s", "in2_s", "in1_s", "in4_1", "in2_1", "in1_1"],
+          "outputs": ["i7_s", "i7_1"],
+          "fault_targets": ["i7"]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "description": "Second level gates - input combinations and local states",
+      "gates": [
+        {
+          "name": "i0",
+          "type": "AND3",
+          "inputs": ["nin4_s", "nin2_s", "nin1_s", "nin4_1", "nin2_1", "nin1_1"],
+          "outputs": ["i0_s", "i0_1"],
+          "fault_targets": ["i0"]
+        },
+        {
+          "name": "i1",
+          "type": "AND3",
+          "inputs": ["nin4_s", "nin2_s", "in1_s", "nin4_1", "nin2_1", "in1_1"],
+          "outputs": ["i1_s", "i1_1"],
+          "fault_targets": ["i1"]
+        },
+        {
+          "name": "i2",
+          "type": "AND3",
+          "inputs": ["nin4_s", "in2_s", "nin1_s", "nin4_1", "in2_1", "nin1_1"],
+          "outputs": ["i2_s", "i2_1"],
+          "fault_targets": ["i2"]
+        },
+        {
+          "name": "i3",
+          "type": "AND3",
+          "inputs": ["nin4_s", "in2_s", "in1_s", "nin4_1", "in2_1", "in1_1"],
+          "outputs": ["i3_s", "i3_1"],
+          "fault_targets": ["i3"]
+        },
+        {
+          "name": "i4",
+          "type": "AND3",
+          "inputs": ["in4_s", "nin2_s", "nin1_s", "in4_1", "nin2_1", "nin1_1"],
+          "outputs": ["i4_s", "i4_1"],
+          "fault_targets": ["i4"]
+        },
+        {
+          "name": "i5",
+          "type": "AND3",
+          "inputs": ["in4_s", "nin2_s", "in1_s", "in4_1", "nin2_1", "in1_1"],
+          "outputs": ["i5_s", "i5_1"],
+          "fault_targets": ["i5"]
+        },
+        {
+          "name": "i6",
+          "type": "AND3",
+          "inputs": ["in4_s", "in2_s", "nin1_s", "in4_1", "in2_1", "nin1_1"],
+          "outputs": ["i6_s", "i6_1"],
+          "fault_targets": ["i6"]
+        },
+        {
+          "name": "ls0",
+          "type": "AND3",
+          "inputs": ["nps4_s", "nps2_s", "nps1_s", "nps4_1", "nps2_1", "nps1_1"],
+          "outputs": ["ls0_s", "ls0_1"],
+          "fault_targets": ["ls0"]
+        },
+        {
+          "name": "ls1",
+          "type": "AND3",
+          "inputs": ["nps4_s", "nps2_s", "ps1_s", "nps4_1", "nps2_1", "ps1_1"],
+          "outputs": ["ls1_s", "ls1_1"],
+          "fault_targets": ["ls1"]
+        },
+        {
+          "name": "ls2",
+          "type": "AND3",
+          "inputs": ["nps4_s", "ps2_s", "nps1_s", "nps4_1", "ps2_1", "nps1_1"],
+          "outputs": ["ls2_s", "ls2_1"],
+          "fault_targets": ["ls2"]
+        },
+        {
+          "name": "ls3",
+          "type": "AND3",
+          "inputs": ["nps4_s", "ps2_s", "ps1_s", "nps4_1", "ps2_1", "ps1_1"],
+          "outputs": ["ls3_s", "ls3_1"],
+          "fault_targets": ["ls3"]
+        },
+        {
+          "name": "ls4",
+          "type": "AND3",
+          "inputs": ["ps4_s", "nps2_s", "nps1_s", "ps4_1", "nps2_1", "nps1_1"],
+          "outputs": ["ls4_s", "ls4_1"],
+          "fault_targets": ["ls4"]
+        },
+        {
+          "name": "ls5",
+          "type": "AND3",
+          "inputs": ["ps4_s", "nps2_s", "ps1_s", "ps4_1", "nps2_1", "ps1_1"],
+          "outputs": ["ls5_s", "ls5_1"],
+          "fault_targets": ["ls5"]
+        },
+        {
+          "name": "ls6",
+          "type": "AND3",
+          "inputs": ["ps4_s", "ps2_s", "nps1_s", "ps4_1", "ps2_1", "nps1_1"],
+          "outputs": ["ls6_s", "ls6_1"],
+          "fault_targets": ["ls6"]
+        },
+        {
+          "name": "ls7",
+          "type": "AND3",
+          "inputs": ["ps4_s", "ps2_s", "ps1_s", "ps4_1", "ps2_1", "ps1_1"],
+          "outputs": ["ls7_s", "ls7_1"],
+          "fault_targets": ["ls7"]
+        },
+        {
+          "name": "ni7",
+          "type": "NOT",
+          "inputs": ["i7_s", "i7_1"],
+          "outputs": ["ni7_s", "ni7_1"],
+          "fault_targets": ["ni7"]
+        },
+        {
+          "name": "s31",
+          "type": "AND3",
+          "inputs": ["ps16_s", "ps8_s", "ls7_s", "ps16_1", "ps8_1", "ls7_1"],
+          "outputs": ["s31_s", "s31_1"],
+          "fault_targets": ["s31"]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "description": "Third level gates - state combinations and more inverters",
+      "gates": [
+        {
+          "name": "ni0",
+          "type": "NOT",
+          "inputs": ["i0_s", "i0_1"],
+          "outputs": ["ni0_s", "ni0_1"],
+          "fault_targets": ["ni0"]
+        },
+        {
+          "name": "ni1",
+          "type": "NOT",
+          "inputs": ["i1_s", "i1_1"],
+          "outputs": ["ni1_s", "ni1_1"],
+          "fault_targets": ["ni1"]
+        },
+        {
+          "name": "ni2",
+          "type": "NOT",
+          "inputs": ["i2_s", "i2_1"],
+          "outputs": ["ni2_s", "ni2_1"],
+          "fault_targets": ["ni2"]
+        },
+        {
+          "name": "ni3",
+          "type": "NOT",
+          "inputs": ["i3_s", "i3_1"],
+          "outputs": ["ni3_s", "ni3_1"],
+          "fault_targets": ["ni3"]
+        },
+        {
+          "name": "ni5",
+          "type": "NOT",
+          "inputs": ["i5_s", "i5_1"],
+          "outputs": ["ni5_s", "ni5_1"],
+          "fault_targets": ["ni5"]
+        },
+        {
+          "name": "ni6",
+          "type": "NOT",
+          "inputs": ["i6_s", "i6_1"],
+          "outputs": ["ni6_s", "ni6_1"],
+          "fault_targets": ["ni6"]
+        },
+        {
+          "name": "s0",
+          "type": "AND3",
+          "inputs": ["nps16_s", "nps8_s", "ls0_s", "nps16_1", "nps8_1", "ls0_1"],
+          "outputs": ["s0_s", "s0_1"],
+          "fault_targets": ["s0"]
+        },
+        {
+          "name": "s1",
+          "type": "AND3",
+          "inputs": ["nps16_s", "nps8_s", "ls1_s", "nps16_1", "nps8_1", "ls1_1"],
+          "outputs": ["s1_s", "s1_1"],
+          "fault_targets": ["s1"]
+        },
+        {
+          "name": "s2",
+          "type": "AND3",
+          "inputs": ["nps16_s", "nps8_s", "ls2_s", "nps16_1", "nps8_1", "ls2_1"],
+          "outputs": ["s2_s", "s2_1"],
+          "fault_targets": ["s2"]
+        },
+        {
+          "name": "s3",
+          "type": "AND3",
+          "inputs": ["nps16_s", "nps8_s", "ls3_s", "nps16_1", "nps8_1", "ls3_1"],
+          "outputs": ["s3_s", "s3_1"],
+          "fault_targets": ["s3"]
+        },
+        {
+          "name": "s4",
+          "type": "AND3",
+          "inputs": ["nps16_s", "nps8_s", "ls4_s", "nps16_1", "nps8_1", "ls4_1"],
+          "outputs": ["s4_s", "s4_1"],
+          "fault_targets": ["s4"]
+        },
+        {
+          "name": "s5",
+          "type": "AND3",
+          "inputs": ["nps16_s", "nps8_s", "ls5_s", "nps16_1", "nps8_1", "ls5_1"],
+          "outputs": ["s5_s", "s5_1"],
+          "fault_targets": ["s5"]
+        },
+        {
+          "name": "s6",
+          "type": "AND3",
+          "inputs": ["nps16_s", "nps8_s", "ls6_s", "nps16_1", "nps8_1", "ls6_1"],
+          "outputs": ["s6_s", "s6_1"],
+          "fault_targets": ["s6"]
+        },
+        {
+          "name": "s7",
+          "type": "AND3",
+          "inputs": ["nps16_s", "nps8_s", "ls7_s", "nps16_1", "nps8_1", "ls7_1"],
+          "outputs": ["s7_s", "s7_1"],
+          "fault_targets": ["s7"]
+        },
+        {
+          "name": "s8",
+          "type": "AND3",
+          "inputs": ["nps16_s", "ps8_s", "ls0_s", "nps16_1", "ps8_1", "ls0_1"],
+          "outputs": ["s8_s", "s8_1"],
+          "fault_targets": ["s8"]
+        },
+        {
+          "name": "s9",
+          "type": "AND3",
+          "inputs": ["nps16_s", "ps8_s", "ls1_s", "nps16_1", "ps8_1", "ls1_1"],
+          "outputs": ["s9_s", "s9_1"],
+          "fault_targets": ["s9"]
+        },
+        {
+          "name": "s10",
+          "type": "AND3",
+          "inputs": ["nps16_s", "ps8_s", "ls2_s", "nps16_1", "ps8_1", "ls2_1"],
+          "outputs": ["s10_s", "s10_1"],
+          "fault_targets": ["s10"]
+        },
+        {
+          "name": "s11",
+          "type": "AND3",
+          "inputs": ["nps16_s", "ps8_s", "ls3_s", "nps16_1", "ps8_1", "ls3_1"],
+          "outputs": ["s11_s", "s11_1"],
+          "fault_targets": ["s11"]
+        },
+        {
+          "name": "s12",
+          "type": "AND3",
+          "inputs": ["nps16_s", "ps8_s", "ls4_s", "nps16_1", "ps8_1", "ls4_1"],
+          "outputs": ["s12_s", "s12_1"],
+          "fault_targets": ["s12"]
+        },
+        {
+          "name": "s13",
+          "type": "AND3",
+          "inputs": ["nps16_s", "ps8_s", "ls5_s", "nps16_1", "ps8_1", "ls5_1"],
+          "outputs": ["s13_s", "s13_1"],
+          "fault_targets": ["s13"]
+        },
+        {
+          "name": "s14",
+          "type": "AND3",
+          "inputs": ["nps16_s", "ps8_s", "ls6_s", "nps16_1", "ps8_1", "ls6_1"],
+          "outputs": ["s14_s", "s14_1"],
+          "fault_targets": ["s14"]
+        },
+        {
+          "name": "s15",
+          "type": "AND3",
+          "inputs": ["nps16_s", "ps8_s", "ls7_s", "nps16_1", "ps8_1", "ls7_1"],
+          "outputs": ["s15_s", "s15_1"],
+          "fault_targets": ["s15"]
+        },
+        {
+          "name": "s16",
+          "type": "AND3",
+          "inputs": ["ps16_s", "nps8_s", "ls0_s", "ps16_1", "nps8_1", "ls0_1"],
+          "outputs": ["s16_s", "s16_1"],
+          "fault_targets": ["s16"]
+        },
+        {
+          "name": "s17",
+          "type": "AND3",
+          "inputs": ["ps16_s", "nps8_s", "ls1_s", "ps16_1", "nps8_1", "ls1_1"],
+          "outputs": ["s17_s", "s17_1"],
+          "fault_targets": ["s17"]
+        },
+        {
+          "name": "s18",
+          "type": "AND3",
+          "inputs": ["ps16_s", "nps8_s", "ls2_s", "ps16_1", "nps8_1", "ls2_1"],
+          "outputs": ["s18_s", "s18_1"],
+          "fault_targets": ["s18"]
+        },
+        {
+          "name": "s19",
+          "type": "AND3",
+          "inputs": ["ps16_s", "nps8_s", "ls3_s", "ps16_1", "nps8_1", "ls3_1"],
+          "outputs": ["s19_s", "s19_1"],
+          "fault_targets": ["s19"]
+        },
+        {
+          "name": "s20",
+          "type": "AND3",
+          "inputs": ["ps16_s", "nps8_s", "ls4_s", "ps16_1", "nps8_1", "ls4_1"],
+          "outputs": ["s20_s", "s20_1"],
+          "fault_targets": ["s20"]
+        },
+        {
+          "name": "s21",
+          "type": "AND3",
+          "inputs": ["ps16_s", "nps8_s", "ls5_s", "ps16_1", "nps8_1", "ls5_1"],
+          "outputs": ["s21_s", "s21_1"],
+          "fault_targets": ["s21"]
+        },
+        {
+          "name": "s22",
+          "type": "AND3",
+          "inputs": ["ps16_s", "nps8_s", "ls6_s", "ps16_1", "nps8_1", "ls6_1"],
+          "outputs": ["s22_s", "s22_1"],
+          "fault_targets": ["s22"]
+        },
+        {
+          "name": "s23",
+          "type": "AND3",
+          "inputs": ["ps16_s", "nps8_s", "ls7_s", "ps16_1", "nps8_1", "ls7_1"],
+          "outputs": ["s23_s", "s23_1"],
+          "fault_targets": ["s23"]
+        },
+        {
+          "name": "s24",
+          "type": "AND3",
+          "inputs": ["ps16_s", "ps8_s", "ls0_s", "ps16_1", "ps8_1", "ls0_1"],
+          "outputs": ["s24_s", "s24_1"],
+          "fault_targets": ["s24"]
+        },
+        {
+          "name": "s25",
+          "type": "AND3",
+          "inputs": ["ps16_s", "ps8_s", "ls1_s", "ps16_1", "ps8_1", "ls1_1"],
+          "outputs": ["s25_s", "s25_1"],
+          "fault_targets": ["s25"]
+        },
+        {
+          "name": "s26",
+          "type": "AND3",
+          "inputs": ["ps16_s", "ps8_s", "ls2_s", "ps16_1", "ps8_1", "ls2_1"],
+          "outputs": ["s26_s", "s26_1"],
+          "fault_targets": ["s26"]
+        },
+        {
+          "name": "s27",
+          "type": "AND3",
+          "inputs": ["ps16_s", "ps8_s", "ls3_s", "ps16_1", "ps8_1", "ls3_1"],
+          "outputs": ["s27_s", "s27_1"],
+          "fault_targets": ["s27"]
+        },
+        {
+          "name": "s28",
+          "type": "AND3",
+          "inputs": ["ps16_s", "ps8_s", "ls4_s", "ps16_1", "ps8_1", "ls4_1"],
+          "outputs": ["s28_s", "s28_1"],
+          "fault_targets": ["s28"]
+        },
+        {
+          "name": "s29",
+          "type": "AND3",
+          "inputs": ["ps16_s", "ps8_s", "ls5_s", "ps16_1", "ps8_1", "ls5_1"],
+          "outputs": ["s29_s", "s29_1"],
+          "fault_targets": ["s29"]
+        },
+        {
+          "name": "s30",
+          "type": "AND3",
+          "inputs": ["ps16_s", "ps8_s", "ls6_s", "ps16_1", "ps8_1", "ls6_1"],
+          "outputs": ["s30_s", "s30_1"],
+          "fault_targets": ["s30"]
+        },
+        {
+          "name": "b2",
+          "type": "OR3",
+          "inputs": ["i5_s", "i3_s", "i2_s", "i5_1", "i3_1", "i2_1"],
+          "outputs": ["b2_s", "b2_1"],
+          "fault_targets": ["b2"]
+        },
+        {
+          "name": "b7",
+          "type": "OR2",
+          "inputs": ["i5_s", "i1_s", "i5_1", "i1_1"],
+          "outputs": ["b7_s", "b7_1"],
+          "fault_targets": ["b7"]
+        },
+        {
+          "name": "c5",
+          "type": "OR2",
+          "inputs": ["i7_s", "i5_s", "i7_1", "i5_1"],
+          "outputs": ["c5_s", "c5_1"],
+          "fault_targets": ["c5"]
+        },
+        {
+          "name": "c13",
+          "type": "OR2",
+          "inputs": ["i3_s", "i2_s", "i3_1", "i2_1"],
+          "outputs": ["c13_s", "c13_1"],
+          "fault_targets": ["c13"]
+        },
+        {
+          "name": "e5",
+          "type": "OR2",
+          "inputs": ["i5_s", "i4_s", "i5_1", "i4_1"],
+          "outputs": ["e5_s", "e5_1"],
+          "fault_targets": ["e5"]
+        },
+        {
+          "name": "e10",
+          "type": "OR3",
+          "inputs": ["i6_s", "i2_s", "i0_s", "i6_1", "i2_1", "i0_1"],
+          "outputs": ["e10_s", "e10_1"],
+          "fault_targets": ["e10"]
+        },
+        {
+          "name": "e12",
+          "type": "OR2",
+          "inputs": ["i6_s", "i3_s", "i6_1", "i3_1"],
+          "outputs": ["e12_s", "e12_1"],
+          "fault_targets": ["e12"]
+        },
+        {
+          "name": "e18",
+          "type": "OR2",
+          "inputs": ["i6_s", "i2_s", "i6_1", "i2_1"],
+          "outputs": ["e18_s", "e18_1"],
+          "fault_targets": ["e18"]
+        },
+        {
+          "name": "e24",
+          "type": "OR2",
+          "inputs": ["i7_s", "i1_s", "i7_1", "i1_1"],
+          "outputs": ["e24_s", "e24_1"],
+          "fault_targets": ["e24"]
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "description": "Fourth level gates - complex state combinations and operations",
+      "gates": [
+        {
+          "name": "a1",
+          "type": "AND2",
+          "inputs": ["s10_s", "i0_s", "s10_1", "i0_1"],
+          "outputs": ["a1_s", "a1_1"],
+          "fault_targets": ["a1"]
+        },
+        {
+          "name": "a2",
+          "type": "AND2",
+          "inputs": ["s15_s", "i5_s", "s15_1", "i5_1"],
+          "outputs": ["a2_s", "a2_1"],
+          "fault_targets": ["a2"]
+        },
+        {
+          "name": "a3",
+          "type": "AND2",
+          "inputs": ["s18_s", "ni6_s", "s18_1", "ni6_1"],
+          "outputs": ["a3_s", "a3_1"],
+          "fault_targets": ["a3"]
+        },
+        {
+          "name": "a4",
+          "type": "OR3",
+          "inputs": ["s20_s", "s21_s", "s22_s", "s20_1", "s21_1", "s22_1"],
+          "outputs": ["a4_s", "a4_1"],
+          "fault_targets": ["a4"]
+        },
+        {
+          "name": "a5",
+          "type": "AND2",
+          "inputs": ["s24_s", "ni7_s", "s24_1", "ni7_1"],
+          "outputs": ["a5_s", "a5_1"],
+          "fault_targets": ["a5"]
+        },
+        {
+          "name": "a6",
+          "type": "OR2",
+          "inputs": ["s25_s", "s26_s", "s25_1", "s26_1"],
+          "outputs": ["a6_s", "a6_1"],
+          "fault_targets": ["a6"]
+        },
+        {
+          "name": "a7",
+          "type": "OR3",
+          "inputs": ["s27_s", "s28_s", "s29_s", "s27_1", "s28_1", "s29_1"],
+          "outputs": ["a7_s", "a7_1"],
+          "fault_targets": ["a7"]
+        },
+        {
+          "name": "a9",
+          "type": "AND3",
+          "inputs": ["s31_s", "ni5_s", "ni2_s", "s31_1", "ni5_1", "ni2_1"],
+          "outputs": ["a9_s", "a9_1"],
+          "fault_targets": ["a9"]
+        },
+        {
+          "name": "b1",
+          "type": "AND2",
+          "inputs": ["s3_s", "i2_s", "s3_1", "i2_1"],
+          "outputs": ["b1_s", "b1_1"],
+          "fault_targets": ["b1"]
+        },
+        {
+          "name": "b3",
+          "type": "AND2",
+          "inputs": ["b2_s", "s7_s", "b2_1", "s7_1"],
+          "outputs": ["b3_s", "b3_1"],
+          "fault_targets": ["b3"]
+        },
+        {
+          "name": "b4",
+          "type": "AND2",
+          "inputs": ["s10_s", "ni6_s", "s10_1", "ni6_1"],
+          "outputs": ["b4_s", "b4_1"],
+          "fault_targets": ["b4"]
+        },
+        {
+          "name": "b5",
+          "type": "OR3",
+          "inputs": ["s12_s", "s13_s", "s14_s", "s12_1", "s13_1", "s14_1"],
+          "outputs": ["b5_s", "b5_1"],
+          "fault_targets": ["b5"]
+        },
+        {
+          "name": "b6",
+          "type": "AND2",
+          "inputs": ["s15_s", "ni5_s", "s15_1", "ni5_1"],
+          "outputs": ["b6_s", "b6_1"],
+          "fault_targets": ["b6"]
+        },
+        {
+          "name": "b8",
+          "type": "AND2",
+          "inputs": ["s23_s", "b7_s", "s23_1", "b7_1"],
+          "outputs": ["b8_s", "b8_1"],
+          "fault_targets": ["b8"]
+        },
+        {
+          "name": "b9",
+          "type": "OR2",
+          "inputs": ["s25_s", "s26_s", "s25_1", "s26_1"],
+          "outputs": ["b9_s", "b9_1"],
+          "fault_targets": ["b9"]
+        },
+        {
+          "name": "b10",
+          "type": "OR3",
+          "inputs": ["s27_s", "s28_s", "s29_s", "s27_1", "s28_1", "s29_1"],
+          "outputs": ["b10_s", "b10_1"],
+          "fault_targets": ["b10"]
+        },
+        {
+          "name": "c2",
+          "type": "AND3",
+          "inputs": ["s7_s", "ni5_s", "ni3_s", "s7_1", "ni5_1", "ni3_1"],
+          "outputs": ["c2_s", "c2_1"],
+          "fault_targets": ["c2"]
+        },
+        {
+          "name": "c3",
+          "type": "AND2",
+          "inputs": ["s11_s", "i7_s", "s11_1", "i7_1"],
+          "outputs": ["c3_s", "c3_1"],
+          "fault_targets": ["c3"]
+        },
+        {
+          "name": "c4",
+          "type": "AND2",
+          "inputs": ["s15_s", "ni5_s", "s15_1", "ni5_1"],
+          "outputs": ["c4_s", "c4_1"],
+          "fault_targets": ["c4"]
+        },
+        {
+          "name": "c6",
+          "type": "AND2",
+          "inputs": ["s23_s", "ni5_s", "s23_1", "ni5_1"],
+          "outputs": ["c6_s", "c6_1"],
+          "fault_targets": ["c6"]
+        },
+        {
+          "name": "c8",
+          "type": "AND2",
+          "inputs": ["s19_s", "c5_s", "s19_1", "c5_1"],
+          "outputs": ["c8_s", "c8_1"],
+          "fault_targets": ["c8"]
+        },
+        {
+          "name": "c14",
+          "type": "AND2",
+          "inputs": ["c13_s", "s3_s", "c13_1", "s3_1"],
+          "outputs": ["c14_s", "c14_1"],
+          "fault_targets": ["c14"]
+        },
+        {
+          "name": "c15",
+          "type": "AND2",
+          "inputs": ["s27_s", "i7_s", "s27_1", "i7_1"],
+          "outputs": ["c15_s", "c15_1"],
+          "fault_targets": ["c15"]
+        },
+        {
+          "name": "d1",
+          "type": "AND2",
+          "inputs": ["s1_s", "i2_s", "s1_1", "i2_1"],
+          "outputs": ["d1_s", "d1_1"],
+          "fault_targets": ["d1"]
+        },
+        {
+          "name": "d2",
+          "type": "AND3",
+          "inputs": ["s3_s", "ni3_s", "ni2_s", "s3_1", "ni3_1", "ni2_1"],
+          "outputs": ["d2_s", "d2_1"],
+          "fault_targets": ["d2"]
+        },
+        {
+          "name": "d3",
+          "type": "AND2",
+          "inputs": ["s5_s", "i0_s", "s5_1", "i0_1"],
+          "outputs": ["d3_s", "d3_1"],
+          "fault_targets": ["d3"]
+        },
+        {
+          "name": "d5",
+          "type": "AND2",
+          "inputs": ["s9_s", "i2_s", "s9_1", "i2_1"],
+          "outputs": ["d5_s", "d5_1"],
+          "fault_targets": ["d5"]
+        },
+        {
+          "name": "d6",
+          "type": "AND2",
+          "inputs": ["s11_s", "ni7_s", "s11_1", "ni7_1"],
+          "outputs": ["d6_s", "d6_1"],
+          "fault_targets": ["d6"]
+        },
+        {
+          "name": "d7",
+          "type": "AND2",
+          "inputs": ["s13_s", "i0_s", "s13_1", "i0_1"],
+          "outputs": ["d7_s", "d7_1"],
+          "fault_targets": ["d7"]
+        },
+        {
+          "name": "d9",
+          "type": "AND2",
+          "inputs": ["s15_s", "ni5_s", "s15_1", "ni5_1"],
+          "outputs": ["d9_s", "d9_1"],
+          "fault_targets": ["d9"]
+        },
+        {
+          "name": "d10",
+          "type": "AND2",
+          "inputs": ["s17_s", "i2_s", "s17_1", "i2_1"],
+          "outputs": ["d10_s", "d10_1"],
+          "fault_targets": ["d10"]
+        },
+        {
+          "name": "d11",
+          "type": "AND2",
+          "inputs": ["s19_s", "ni7_s", "s19_1", "ni7_1"],
+          "outputs": ["d11_s", "d11_1"],
+          "fault_targets": ["d11"]
+        },
+        {
+          "name": "d12",
+          "type": "AND2",
+          "inputs": ["s21_s", "i0_s", "s21_1", "i0_1"],
+          "outputs": ["d12_s", "d12_1"],
+          "fault_targets": ["d12"]
+        },
+        {
+          "name": "d13",
+          "type": "AND3",
+          "inputs": ["s23_s", "ni5_s", "ni1_s", "s23_1", "ni5_1", "ni1_1"],
+          "outputs": ["d13_s", "d13_1"],
+          "fault_targets": ["d13"]
+        },
+        {
+          "name": "d14",
+          "type": "AND2",
+          "inputs": ["s25_s", "i2_s", "s25_1", "i2_1"],
+          "outputs": ["d14_s", "d14_1"],
+          "fault_targets": ["d14"]
+        },
+        {
+          "name": "d15",
+          "type": "AND2",
+          "inputs": ["s29_s", "i0_s", "s29_1", "i0_1"],
+          "outputs": ["d15_s", "d15_1"],
+          "fault_targets": ["d15"]
+        },
+        {
+          "name": "d27",
+          "type": "AND2",
+          "inputs": ["s27_s", "ni7_s", "s27_1", "ni7_1"],
+          "outputs": ["d27_s", "d27_1"],
+          "fault_targets": ["d27"]
+        },
+        {
+          "name": "e1",
+          "type": "AND2",
+          "inputs": ["s0_s", "i1_s", "s0_1", "i1_1"],
+          "outputs": ["e1_s", "e1_1"],
+          "fault_targets": ["e1"]
+        },
+        {
+          "name": "e2",
+          "type": "AND2",
+          "inputs": ["s1_s", "ni2_s", "s1_1", "ni2_1"],
+          "outputs": ["e2_s", "e2_1"],
+          "fault_targets": ["e2"]
+        },
+        {
+          "name": "e3",
+          "type": "AND2",
+          "inputs": ["s2_s", "i2_s", "s2_1", "i2_1"],
+          "outputs": ["e3_s", "e3_1"],
+          "fault_targets": ["e3"]
+        },
+        {
+          "name": "e4",
+          "type": "AND3",
+          "inputs": ["s3_s", "ni3_s", "ni2_s", "s3_1", "ni3_1", "ni2_1"],
+          "outputs": ["e4_s", "e4_1"],
+          "fault_targets": ["e4"]
+        },
+        {
+          "name": "e6",
+          "type": "AND2",
+          "inputs": ["s5_s", "ni0_s", "s5_1", "ni0_1"],
+          "outputs": ["e6_s", "e6_1"],
+          "fault_targets": ["e6"]
+        },
+        {
+          "name": "e7",
+          "type": "AND2",
+          "inputs": ["s6_s", "i7_s", "s6_1", "i7_1"],
+          "outputs": ["e7_s", "e7_1"],
+          "fault_targets": ["e7"]
+        },
+        {
+          "name": "e8",
+          "type": "AND2",
+          "inputs": ["s8_s", "i1_s", "s8_1", "i1_1"],
+          "outputs": ["e8_s", "e8_1"],
+          "fault_targets": ["e8"]
+        },
+        {
+          "name": "e9",
+          "type": "AND2",
+          "inputs": ["s9_s", "ni2_s", "s9_1", "ni2_1"],
+          "outputs": ["e9_s", "e9_1"],
+          "fault_targets": ["e9"]
+        },
+        {
+          "name": "e11",
+          "type": "AND2",
+          "inputs": ["s11_s", "ni7_s", "s11_1", "ni7_1"],
+          "outputs": ["e11_s", "e11_1"],
+          "fault_targets": ["e11"]
+        },
+        {
+          "name": "e13",
+          "type": "AND2",
+          "inputs": ["s13_s", "ni0_s", "s13_1", "ni0_1"],
+          "outputs": ["e13_s", "e13_1"],
+          "fault_targets": ["e13"]
+        },
+        {
+          "name": "e14",
+          "type": "AND2",
+          "inputs": ["s14_s", "i7_s", "s14_1", "i7_1"],
+          "outputs": ["e14_s", "e14_1"],
+          "fault_targets": ["e14"]
+        },
+        {
+          "name": "e15",
+          "type": "AND2",
+          "inputs": ["s15_s", "ni5_s", "s15_1", "ni5_1"],
+          "outputs": ["e15_s", "e15_1"],
+          "fault_targets": ["e15"]
+        },
+        {
+          "name": "e16",
+          "type": "AND2",
+          "inputs": ["s16_s", "i1_s", "s16_1", "i1_1"],
+          "outputs": ["e16_s", "e16_1"],
+          "fault_targets": ["e16"]
+        },
+        {
+          "name": "e17",
+          "type": "AND2",
+          "inputs": ["s17_s", "ni2_s", "s17_1", "ni2_1"],
+          "outputs": ["e17_s", "e17_1"],
+          "fault_targets": ["e17"]
+        },
+        {
+          "name": "e19",
+          "type": "AND2",
+          "inputs": ["s19_s", "ni7_s", "s19_1", "ni7_1"],
+          "outputs": ["e19_s", "e19_1"],
+          "fault_targets": ["e19"]
+        },
+        {
+          "name": "e20",
+          "type": "AND2",
+          "inputs": ["s20_s", "e12_s", "s20_1", "e12_1"],
+          "outputs": ["e20_s", "e20_1"],
+          "fault_targets": ["e20"]
+        },
+        {
+          "name": "e21",
+          "type": "AND2",
+          "inputs": ["s21_s", "ni0_s", "s21_1", "ni0_1"],
+          "outputs": ["e21_s", "e21_1"],
+          "fault_targets": ["e21"]
+        },
+        {
+          "name": "e22",
+          "type": "AND2",
+          "inputs": ["s22_s", "i7_s", "s22_1", "i7_1"],
+          "outputs": ["e22_s", "e22_1"],
+          "fault_targets": ["e22"]
+        },
+        {
+          "name": "e23",
+          "type": "AND2",
+          "inputs": ["s23_s", "ni5_s", "s23_1", "ni5_1"],
+          "outputs": ["e23_s", "e23_1"],
+          "fault_targets": ["e23"]
+        },
+        {
+          "name": "e25",
+          "type": "AND2",
+          "inputs": ["s25_s", "ni2_s", "s25_1", "ni2_1"],
+          "outputs": ["e25_s", "e25_1"],
+          "fault_targets": ["e25"]
+        },
+        {
+          "name": "e26",
+          "type": "AND2",
+          "inputs": ["s26_s", "i2_s", "s26_1", "i2_1"],
+          "outputs": ["e26_s", "e26_1"],
+          "fault_targets": ["e26"]
+        },
+        {
+          "name": "e27",
+          "type": "AND2",
+          "inputs": ["s27_s", "ni7_s", "s27_1", "ni7_1"],
+          "outputs": ["e27_s", "e27_1"],
+          "fault_targets": ["e27"]
+        },
+        {
+          "name": "e28",
+          "type": "AND2",
+          "inputs": ["s28_s", "e12_s", "s28_1", "e12_1"],
+          "outputs": ["e28_s", "e28_1"],
+          "fault_targets": ["e28"]
+        },
+        {
+          "name": "e29",
+          "type": "AND2",
+          "inputs": ["s29_s", "ni0_s", "s29_1", "ni0_1"],
+          "outputs": ["e29_s", "e29_1"],
+          "fault_targets": ["e29"]
+        },
+        {
+          "name": "e30",
+          "type": "AND2",
+          "inputs": ["s30_s", "i7_s", "s30_1", "i7_1"],
+          "outputs": ["e30_s", "e30_1"],
+          "fault_targets": ["e30"]
+        },
+        {
+          "name": "e31",
+          "type": "AND2",
+          "inputs": ["s4_s", "e5_s", "s4_1", "e5_1"],
+          "outputs": ["e31_s", "e31_1"],
+          "fault_targets": ["e31"]
+        },
+        {
+          "name": "e32",
+          "type": "AND2",
+          "inputs": ["s10_s", "e10_s", "s10_1", "e10_1"],
+          "outputs": ["e32_s", "e32_1"],
+          "fault_targets": ["e32"]
+        },
+        {
+          "name": "e33",
+          "type": "AND2",
+          "inputs": ["s12_s", "e12_s", "s12_1", "e12_1"],
+          "outputs": ["e33_s", "e33_1"],
+          "fault_targets": ["e33"]
+        },
+        {
+          "name": "e34",
+          "type": "AND2",
+          "inputs": ["s18_s", "e18_s", "s18_1", "e18_1"],
+          "outputs": ["e34_s", "e34_1"],
+          "fault_targets": ["e34"]
+        },
+        {
+          "name": "e35",
+          "type": "AND2",
+          "inputs": ["s24_s", "e24_s", "s24_1", "e24_1"],
+          "outputs": ["e35_s", "e35_1"],
+          "fault_targets": ["e35"]
+        },
+        {
+          "name": "f1",
+          "type": "AND2",
+          "inputs": ["s12_s", "i5_s", "s12_1", "i5_1"],
+          "outputs": ["f1_s", "f1_1"],
+          "fault_targets": ["f1"]
+        },
+        {
+          "name": "f2",
+          "type": "AND2",
+          "inputs": ["s27_s", "i4_s", "s27_1", "i4_1"],
+          "outputs": ["f2_s", "f2_1"],
+          "fault_targets": ["f2"]
+        },
+        {
+          "name": "f3",
+          "type": "AND2",
+          "inputs": ["s15_s", "i0_s", "s15_1", "i0_1"],
+          "outputs": ["f3_s", "f3_1"],
+          "fault_targets": ["f3"]
+        },
+        {
+          "name": "f4",
+          "type": "AND2",
+          "inputs": ["s27_s", "i2_s", "s27_1", "i2_1"],
+          "outputs": ["f4_s", "f4_1"],
+          "fault_targets": ["f4"]
+        },
+        {
+          "name": "f5",
+          "type": "AND2",
+          "inputs": ["s0_s", "i7_s", "s0_1", "i7_1"],
+          "outputs": ["f5_s", "f5_1"],
+          "fault_targets": ["f5"]
+        },
+        {
+          "name": "f6",
+          "type": "AND2",
+          "inputs": ["s27_s", "i1_s", "s27_1", "i1_1"],
+          "outputs": ["f6_s", "f6_1"],
+          "fault_targets": ["f6"]
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "description": "Fifth level gates - intermediate combinations",
+      "gates": [
+        {
+          "name": "a8",
+          "type": "OR2",
+          "inputs": ["a7_s", "s30_s", "a7_1", "s30_1"],
+          "outputs": ["a8_s", "a8_1"],
+          "fault_targets": ["a8"]
+        },
+        {
+          "name": "a10",
+          "type": "OR3",
+          "inputs": ["a1_s", "a2_s", "s16_s", "a1_1", "a2_1", "s16_1"],
+          "outputs": ["a10_s", "a10_1"],
+          "fault_targets": ["a10"]
+        },
+        {
+          "name": "b11",
+          "type": "OR2",
+          "inputs": ["b10_s", "s30_s", "b10_1", "s30_1"],
+          "outputs": ["b11_s", "b11_1"],
+          "fault_targets": ["b11"]
+        },
+        {
+          "name": "b12",
+          "type": "OR3",
+          "inputs": ["b1_s", "b3_s", "s8_s", "b1_1", "b3_1", "s8_1"],
+          "outputs": ["b12_s", "b12_1"],
+          "fault_targets": ["b12"]
+        },
+        {
+          "name": "b13",
+          "type": "OR3",
+          "inputs": ["s9_s", "b4_s", "s11_s", "s9_1", "b4_1", "s11_1"],
+          "outputs": ["b13_s", "b13_1"],
+          "fault_targets": ["b13"]
+        },
+        {
+          "name": "c1",
+          "type": "OR3",
+          "inputs": ["c14_s", "s4_s", "s5_s", "c14_1", "s4_1", "s5_1"],
+          "outputs": ["c1_s", "c1_1"],
+          "fault_targets": ["c1"]
+        },
+        {
+          "name": "c7",
+          "type": "AND2",
+          "inputs": ["c2_s", "ni2_s", "c2_1", "ni2_1"],
+          "outputs": ["c7_s", "c7_1"],
+          "fault_targets": ["c7"]
+        },
+        {
+          "name": "c16",
+          "type": "OR3",
+          "inputs": ["c15_s", "s28_s", "s29_s", "c15_1", "s28_1", "s29_1"],
+          "outputs": ["c16_s", "c16_1"],
+          "fault_targets": ["c16"]
+        },
+        {
+          "name": "d17",
+          "type": "OR3",
+          "inputs": ["d1_s", "d2_s", "d3_s", "d1_1", "d2_1", "d3_1"],
+          "outputs": ["d17_s", "d17_1"],
+          "fault_targets": ["d17"]
+        },
+        {
+          "name": "d19",
+          "type": "OR3",
+          "inputs": ["s10_s", "d6_s", "d7_s", "s10_1", "d6_1", "d7_1"],
+          "outputs": ["d19_s", "d19_1"],
+          "fault_targets": ["d19"]
+        },
+        {
+          "name": "d20",
+          "type": "OR3",
+          "inputs": ["s14_s", "d9_s", "d10_s", "s14_1", "d9_1", "d10_1"],
+          "outputs": ["d20_s", "d20_1"],
+          "fault_targets": ["d20"]
+        },
+        {
+          "name": "d21",
+          "type": "OR3",
+          "inputs": ["s18_s", "d11_s", "d12_s", "s18_1", "d11_1", "d12_1"],
+          "outputs": ["d21_s", "d21_1"],
+          "fault_targets": ["d21"]
+        },
+        {
+          "name": "d22",
+          "type": "OR3",
+          "inputs": ["s22_s", "d13_s", "d14_s", "s22_1", "d13_1", "d14_1"],
+          "outputs": ["d22_s", "d22_1"],
+          "fault_targets": ["d22"]
+        },
+        {
+          "name": "d23",
+          "type": "OR3",
+          "inputs": ["s26_s", "d15_s", "s30_s", "s26_1", "d15_1", "s30_1"],
+          "outputs": ["d23_s", "d23_1"],
+          "fault_targets": ["d23"]
+        },
+        {
+          "name": "e36",
+          "type": "OR3",
+          "inputs": ["e1_s", "e2_s", "e3_s", "e1_1", "e2_1", "e3_1"],
+          "outputs": ["e36_s", "e36_1"],
+          "fault_targets": ["e36"]
+        },
+        {
+          "name": "e37",
+          "type": "OR3",
+          "inputs": ["e4_s", "e31_s", "e6_s", "e4_1", "e31_1", "e6_1"],
+          "outputs": ["e37_s", "e37_1"],
+          "fault_targets": ["e37"]
+        },
+        {
+          "name": "e39",
+          "type": "OR2",
+          "inputs": ["e9_s", "e32_s", "e9_1", "e32_1"],
+          "outputs": ["e39_s", "e39_1"],
+          "fault_targets": ["e39"]
+        },
+        {
+          "name": "e40",
+          "type": "OR3",
+          "inputs": ["e11_s", "e33_s", "e13_s", "e11_1", "e33_1", "e13_1"],
+          "outputs": ["e40_s", "e40_1"],
+          "fault_targets": ["e40"]
+        },
+        {
+          "name": "e41",
+          "type": "OR3",
+          "inputs": ["e14_s", "e15_s", "e16_s", "e14_1", "e15_1", "e16_1"],
+          "outputs": ["e41_s", "e41_1"],
+          "fault_targets": ["e41"]
+        },
+        {
+          "name": "e42",
+          "type": "OR3",
+          "inputs": ["e17_s", "e34_s", "e19_s", "e17_1", "e34_1", "e19_1"],
+          "outputs": ["e42_s", "e42_1"],
+          "fault_targets": ["e42"]
+        },
+        {
+          "name": "e43",
+          "type": "OR3",
+          "inputs": ["e20_s", "e30_s", "a9_s", "e20_1", "e30_1", "a9_1"],
+          "outputs": ["e43_s", "e43_1"],
+          "fault_targets": ["e43"]
+        },
+        {
+          "name": "e44",
+          "type": "OR3",
+          "inputs": ["e21_s", "e22_s", "e23_s", "e21_1", "e22_1", "e23_1"],
+          "outputs": ["e44_s", "e44_1"],
+          "fault_targets": ["e44"]
+        },
+        {
+          "name": "e45",
+          "type": "OR3",
+          "inputs": ["e35_s", "e25_s", "e26_s", "e35_1", "e25_1", "e26_1"],
+          "outputs": ["e45_s", "e45_1"],
+          "fault_targets": ["e45"]
+        },
+        {
+          "name": "e46",
+          "type": "OR3",
+          "inputs": ["e27_s", "e28_s", "e29_s", "e27_1", "e28_1", "e29_1"],
+          "outputs": ["e46_s", "e46_1"],
+          "fault_targets": ["e46"]
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "description": "Sixth level gates - higher-level combinations",
+      "gates": [
+        {
+          "name": "a11",
+          "type": "OR3",
+          "inputs": ["a10_s", "s17_s", "a3_s", "a10_1", "s17_1", "a3_1"],
+          "outputs": ["a11_s", "a11_1"],
+          "fault_targets": ["a11"]
+        },
+        {
+          "name": "b14",
+          "type": "OR3",
+          "inputs": ["b12_s", "b13_s", "b5_s", "b12_1", "b13_1", "b5_1"],
+          "outputs": ["b14_s", "b14_1"],
+          "fault_targets": ["b14"]
+        },
+        {
+          "name": "c9",
+          "type": "OR3",
+          "inputs": ["c1_s", "s6_s", "c7_s", "c1_1", "s6_1", "c7_1"],
+          "outputs": ["c9_s", "c9_1"],
+          "fault_targets": ["c9"]
+        },
+        {
+          "name": "c17",
+          "type": "OR2",
+          "inputs": ["c16_s", "s30_s", "c16_1", "s30_1"],
+          "outputs": ["c17_s", "c17_1"],
+          "fault_targets": ["c17"]
+        },
+        {
+          "name": "d18",
+          "type": "OR3",
+          "inputs": ["s6_s", "c7_s", "d5_s", "s6_1", "c7_1", "d5_1"],
+          "outputs": ["d18_s", "d18_1"],
+          "fault_targets": ["d18"]
+        },
+        {
+          "name": "d28",
+          "type": "OR2",
+          "inputs": ["d23_s", "d27_s", "d23_1", "d27_1"],
+          "outputs": ["d28_s", "d28_1"],
+          "fault_targets": ["d28"]
+        },
+        {
+          "name": "e38",
+          "type": "OR3",
+          "inputs": ["e7_s", "c7_s", "e8_s", "e7_1", "c7_1", "e8_1"],
+          "outputs": ["e38_s", "e38_1"],
+          "fault_targets": ["e38"]
+        },
+        {
+          "name": "e47",
+          "type": "OR3",
+          "inputs": ["e36_s", "e37_s", "e44_s", "e36_1", "e37_1", "e44_1"],
+          "outputs": ["e47_s", "e47_1"],
+          "fault_targets": ["e47"]
+        },
+        {
+          "name": "e49",
+          "type": "OR3",
+          "inputs": ["e39_s", "e40_s", "e41_s", "e39_1", "e40_1", "e41_1"],
+          "outputs": ["e49_s", "e49_1"],
+          "fault_targets": ["e49"]
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "description": "Seventh level gates - continued hierarchical combinations",
+      "gates": [
+        {
+          "name": "a12",
+          "type": "OR3",
+          "inputs": ["a11_s", "s19_s", "a4_s", "a11_1", "s19_1", "a4_1"],
+          "outputs": ["a12_s", "a12_1"],
+          "fault_targets": ["a12"]
+        },
+        {
+          "name": "b15",
+          "type": "OR3",
+          "inputs": ["b14_s", "b6_s", "b8_s", "b14_1", "b6_1", "b8_1"],
+          "outputs": ["b15_s", "b15_1"],
+          "fault_targets": ["b15"]
+        },
+        {
+          "name": "c10",
+          "type": "OR3",
+          "inputs": ["c9_s", "c3_s", "b5_s", "c9_1", "c3_1", "b5_1"],
+          "outputs": ["c10_s", "c10_1"],
+          "fault_targets": ["c10"]
+        },
+        {
+          "name": "d24",
+          "type": "OR3",
+          "inputs": ["d17_s", "d18_s", "d19_s", "d17_1", "d18_1", "d19_1"],
+          "outputs": ["d24_s", "d24_1"],
+          "fault_targets": ["d24"]
+        },
+        {
+          "name": "e48",
+          "type": "OR3",
+          "inputs": ["e45_s", "e46_s", "e38_s", "e45_1", "e46_1", "e38_1"],
+          "outputs": ["e48_s", "e48_1"],
+          "fault_targets": ["e48"]
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "description": "Eighth level gates - approaching final outputs",
+      "gates": [
+        {
+          "name": "a13",
+          "type": "OR3",
+          "inputs": ["a12_s", "s23_s", "a5_s", "a12_1", "s23_1", "a5_1"],
+          "outputs": ["a13_s", "a13_1"],
+          "fault_targets": ["a13"]
+        },
+        {
+          "name": "b16",
+          "type": "OR3",
+          "inputs": ["b15_s", "s24_s", "b9_s", "b15_1", "s24_1", "b9_1"],
+          "outputs": ["b16_s", "b16_1"],
+          "fault_targets": ["b16"]
+        },
+        {
+          "name": "c11",
+          "type": "OR3",
+          "inputs": ["c10_s", "c4_s", "c8_s", "c10_1", "c4_1", "c8_1"],
+          "outputs": ["c11_s", "c11_1"],
+          "fault_targets": ["c11"]
+        },
+        {
+          "name": "d25",
+          "type": "OR3",
+          "inputs": ["d24_s", "d20_s", "d21_s", "d24_1", "d20_1", "d21_1"],
+          "outputs": ["d25_s", "d25_1"],
+          "fault_targets": ["d25"]
+        },
+        {
+          "name": "e50",
+          "type": "OR3",
+          "inputs": ["e47_s", "e48_s", "e49_s", "e47_1", "e48_1", "e49_1"],
+          "outputs": ["e50_s", "e50_1"],
+          "fault_targets": ["e50"]
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "description": "Ninth level gates - pre-final combinations",
+      "gates": [
+        {
+          "name": "a14",
+          "type": "OR3",
+          "inputs": ["a13_s", "a6_s", "a8_s", "a13_1", "a6_1", "a8_1"],
+          "outputs": ["a14_s", "a14_1"],
+          "fault_targets": ["a14"]
+        },
+        {
+          "name": "c12",
+          "type": "OR3",
+          "inputs": ["c11_s", "a4_s", "c6_s", "c11_1", "a4_1", "c6_1"],
+          "outputs": ["c12_s", "c12_1"],
+          "fault_targets": ["c12"]
+        },
+        {
+          "name": "d26",
+          "type": "OR3",
+          "inputs": ["d25_s", "d22_s", "d28_s", "d25_1", "d22_1", "d28_1"],
+          "outputs": ["d26_s", "d26_1"],
+          "fault_targets": ["d26"]
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "description": "Final level - outputs and next states",
+      "gates": [
+        {
+          "name": "out4",
+          "type": "OR2",
+          "inputs": ["f1_s", "f2_s", "f1_1", "f2_1"],
+          "outputs": ["out4_s", "out4_1"],
+          "fault_targets": ["out4"]
+        },
+        {
+          "name": "out2",
+          "type": "OR2",
+          "inputs": ["f3_s", "f4_s", "f3_1", "f4_1"],
+          "outputs": ["out2_s", "out2_1"],
+          "fault_targets": ["out2"]
+        },
+        {
+          "name": "out1",
+          "type": "OR2",
+          "inputs": ["f5_s", "f6_s", "f5_1", "f6_1"],
+          "outputs": ["out1_s", "out1_1"],
+          "fault_targets": ["out1"]
+        },
+        {
+          "name": "ns1",
+          "type": "OR3",
+          "inputs": ["e50_s", "e42_s", "e43_s", "e50_1", "e42_1", "e43_1"],
+          "outputs": ["ns1_s", "ns1_1"],
+          "fault_targets": ["ns1"]
+        },
+        {
+          "name": "ns2",
+          "type": "OR3",
+          "inputs": ["d26_s", "s2_s", "a9_s", "d26_1", "s2_1", "a9_1"],
+          "outputs": ["ns2_s", "ns2_1"],
+          "fault_targets": ["ns2"]
+        },
+        {
+          "name": "ns4",
+          "type": "OR3",
+          "inputs": ["c12_s", "c17_s", "a9_s", "c12_1", "c17_1", "a9_1"],
+          "outputs": ["ns4_s", "ns4_1"],
+          "fault_targets": ["ns4"]
+        },
+        {
+          "name": "ns8",
+          "type": "OR3",
+          "inputs": ["b16_s", "b11_s", "a9_s", "b16_1", "b11_1", "a9_1"],
+          "outputs": ["ns8_s", "ns8_1"],
+          "fault_targets": ["ns8"]
+        },
+        {
+          "name": "ns16",
+          "type": "OR2",
+          "inputs": ["a14_s", "a9_s", "a14_1", "a9_1"],
+          "outputs": ["ns16_s", "ns16_1"],
+          "fault_targets": ["ns16"]
+        }
+      ]
+    }
+  ],
+  "primary_inputs": ["ps16_i", "ps8_i", "ps4_i", "ps2_i", "ps1_i"],
+  "circuit_inputs": ["in4", "in2", "in1"],
+  "outputs": ["out4_s", "out2_s", "out1_s"],
+  "next_states": ["ns16_s", "ns8_s", "ns4_s", "ns2_s", "ns1_s"]
+}

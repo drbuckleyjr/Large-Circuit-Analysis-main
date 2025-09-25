@@ -1,0 +1,77 @@
+# Compact Circuit Netlist - LARGE Circuit Example
+# Format: <sig_name, sig_type, level, [inputs], [outputs], [targets]>
+# 
+# This demonstrates the compact format for designer input
+# Much more readable and editable than verbose JSON format
+#
+# Key:
+#   sig_name: Signal/gate name
+#   sig_type: PI, NOT, 2AND, 3AND, 2OR, 3OR
+#   level: Topological level (processing order)
+#   inputs: Input signal names
+#   outputs: Output signal names (typically [name_s, name_1])
+#   targets: Fault injection targets
+
+# Level 1 - Primary Inputs and Basic Inversions
+ps16, PI, 1, [], [ps16_s, ps16_1], [ps16]
+ps8, PI, 1, [], [ps8_s, ps8_1], [ps8]
+ps4, PI, 1, [], [ps4_s, ps4_1], [ps4]
+ps2, PI, 1, [], [ps2_s, ps2_1], [ps2]
+ps1, PI, 1, [], [ps1_s, ps1_1], [ps1]
+i7, PI, 1, [], [i7_s, i7_1], [i7]
+i6, PI, 1, [], [i6_s, i6_1], [i6]
+i5, PI, 1, [], [i5_s, i5_1], [i5]
+i4, PI, 1, [], [i4_s, i4_1], [i4]
+i3, PI, 1, [], [i3_s, i3_1], [i3]
+i2, PI, 1, [], [i2_s, i2_1], [i2]
+i1, PI, 1, [], [i1_s, i1_1], [i1]
+i0, PI, 1, [], [i0_s, i0_1], [i0]
+nps16, NOT, 1, [ps16_s, ps16_1], [nps16_s, nps16_1], [nps16]
+nps8, NOT, 1, [ps8_s, ps8_1], [nps8_s, nps8_1], [nps8]
+nps4, NOT, 1, [ps4_s, ps4_1], [nps4_s, nps4_1], [nps4]
+nps2, NOT, 1, [ps2_s, ps2_1], [nps2_s, nps2_1], [nps2]
+nps1, NOT, 1, [ps1_s, ps1_1], [nps1_s, nps1_1], [nps1]
+
+# Level 2 - Local State Generation
+ls0, 3AND, 2, [nps4_s, nps2_s, nps1_s, nps4_1, nps2_1, nps1_1], [ls0_s, ls0_1], [ls0]
+ls1, 3AND, 2, [nps4_s, nps2_s, ps1_s, nps4_1, nps2_1, ps1_1], [ls1_s, ls1_1], [ls1]
+ls2, 3AND, 2, [nps4_s, ps2_s, nps1_s, nps4_1, ps2_1, nps1_1], [ls2_s, ls2_1], [ls2]
+ls3, 3AND, 2, [nps4_s, ps2_s, ps1_s, nps4_1, ps2_1, ps1_1], [ls3_s, ls3_1], [ls3]
+ls4, 3AND, 2, [ps4_s, nps2_s, nps1_s, ps4_1, nps2_1, nps1_1], [ls4_s, ls4_1], [ls4]
+ls5, 3AND, 2, [ps4_s, nps2_s, ps1_s, ps4_1, nps2_1, ps1_1], [ls5_s, ls5_1], [ls5]
+ls6, 3AND, 2, [ps4_s, ps2_s, nps1_s, ps4_1, ps2_1, nps1_1], [ls6_s, ls6_1], [ls6]
+ls7, 3AND, 2, [ps4_s, ps2_s, ps1_s, ps4_1, ps2_1, ps1_1], [ls7_s, ls7_1], [ls7]
+ni7, NOT, 2, [i7_s, i7_1], [ni7_s, ni7_1], [ni7]
+s31, 3AND, 2, [ps16_s, ps8_s, ls7_s, ps16_1, ps8_1, ls7_1], [s31_s, s31_1], [s31]
+
+# Level 3 - State Combinations and Additional Inversions  
+ni0, NOT, 3, [i0_s, i0_1], [ni0_s, ni0_1], [ni0]
+ni1, NOT, 3, [i1_s, i1_1], [ni1_s, ni1_1], [ni1]
+ni2, NOT, 3, [i2_s, i2_1], [ni2_s, ni2_1], [ni2]
+ni3, NOT, 3, [i3_s, i3_1], [ni3_s, ni3_1], [ni3]
+ni5, NOT, 3, [i5_s, i5_1], [ni5_s, ni5_1], [ni5]
+ni6, NOT, 3, [i6_s, i6_1], [ni6_s, ni6_1], [ni6]
+s0, 3AND, 3, [nps16_s, nps8_s, ls0_s, nps16_1, nps8_1, ls0_1], [s0_s, s0_1], [s0]
+s1, 3AND, 3, [nps16_s, nps8_s, ls1_s, nps16_1, nps8_1, ls1_1], [s1_s, s1_1], [s1]
+
+# Level 4 - Complex Gate Operations (showing first few as example)
+a1, 2AND, 4, [s10_s, i0_s, s10_1, i0_1], [a1_s, a1_1], [a1]
+a2, 2AND, 4, [s15_s, i5_s, s15_1, i5_1], [a2_s, a2_1], [a2]
+b1, 2AND, 4, [s3_s, i2_s, s3_1, i2_1], [b1_s, b1_1], [b1]
+c2, 3AND, 4, [s7_s, ni5_s, ni3_s, s7_1, ni5_1, ni3_1], [c2_s, c2_1], [c2]
+
+# Level 5 - Intermediate Combinations
+a8, 2OR, 5, [a7_s, s30_s, a7_1, s30_1], [a8_s, a8_1], [a8]
+a10, 3OR, 5, [a1_s, a2_s, s16_s, a1_1, a2_1, s16_1], [a10_s, a10_1], [a10]
+
+# Levels 6-9 would continue similarly...
+
+# Level 10 - Final Outputs and Next States
+out4, 2OR, 10, [f1_s, f2_s, f1_1, f2_1], [out4_s, out4_1], [out4]
+out2, 2OR, 10, [f3_s, f4_s, f3_1, f4_1], [out2_s, out2_1], [out2]
+out1, 2OR, 10, [f5_s, f6_s, f5_1, f6_1], [out1_s, out1_1], [out1]
+ns1, 3OR, 10, [e50_s, e42_s, e43_s, e50_1, e42_1, e43_1], [ns1_s, ns1_1], [ns1]
+ns2, 3OR, 10, [d26_s, s2_s, a9_s, d26_1, s2_1, a9_1], [ns2_s, ns2_1], [ns2]
+ns4, 3OR, 10, [c12_s, c17_s, a9_s, c12_1, c17_1, a9_1], [ns4_s, ns4_1], [ns4]
+ns8, 3OR, 10, [b16_s, b11_s, a9_s, b16_1, b11_1, a9_1], [ns8_s, ns8_1], [ns8]
+ns16, 2OR, 10, [a14_s, a9_s, a14_1, a9_1], [ns16_s, ns16_1], [ns16]

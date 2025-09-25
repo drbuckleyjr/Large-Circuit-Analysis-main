@@ -1,0 +1,21 @@
+
+
+// --- begin with a ps to determine an ns ---
+ps2ns := func(ps16_i, ps8_i, ps4_i, ps2_i, ps1_i nd, fault_A string) (nd,..) {
+    return (out4_s, out2_s, out1_s, ns16_s, ns8_s, ns4_s, ns2_s, ns1_s)
+} 
+
+
+
+// --- determine an fp for the (fault_A, ns) pair ---
+ns2fp := func(out4_s, out2_s, out1_s, ns16_s, ns8_s, ns4_s, ns2_s, ns1_s nd) (S,..) {
+    return (dMfp1,.., dMfp31)
+    // -- where each dMfp_ is a slice of structs {S/I, [outputs], ns} --
+}
+
+
+
+// use the (ns, fp) pair to determine a next ps ---
+
+    // -- this is a user selection --
+

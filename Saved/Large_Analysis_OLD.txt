@@ -1,0 +1,13 @@
+// Large_analysis.txt for
+// rudd_Large_OLD.go
+
+foo := func()
+    // outer loop
+	    // get user inputs for fault_A, fault_C
+		// inner loop
+		    peek(fp, s, fault_A, fault_C)
+			// get user selection for S/i
+			ps16a..in1i := setUP(usi, first, ns16h..ns1h)
+			out4b..ns1b, state := one_set_BOOL(ps16a..in1i, fault_C)
+		// repeat inner loop or return to outer loop
+	// repeat outer loop or quit
