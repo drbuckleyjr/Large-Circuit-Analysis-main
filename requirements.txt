@@ -1,0 +1,17 @@
+# Requirements for Large Circuit Analysis ATPG Project
+# Python 3.7+ required
+
+# Core dependencies
+# Currently using only standard library modules
+
+# Development dependencies (optional)
+pytest>=6.0.0
+coverage>=5.0
+black>=21.0.0
+flake8>=3.8.0
+
+# Future dependencies (to be added as needed)
+# numpy>=1.19.0
+# scipy>=1.5.0
+# matplotlib>=3.3.0
+# networkx>=2.5
