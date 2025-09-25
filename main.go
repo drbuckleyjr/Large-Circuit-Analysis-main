@@ -1,11 +1,18 @@
 package main
 
 import (
-	"fmt"
+        "fmt"
 
-	"rudd_Large.go/core"
-	"rudd_Large.go/simulation"
-	"rudd_Large.go/types"
+        "rudd_Large.go/core"
+        "rudd_Large.go/simulation"
+        "rudd_Large.go/types"
+)
+
+// Build information (set by build system)
+var (
+        Version   = "dev"
+        BuildTime = "unknown"
+        Commit    = "unknown"
 )
 
 func main() {
