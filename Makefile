@@ -90,7 +90,7 @@ test:
 build-local: deps
 	@echo "Building for current platform..."
 	@mkdir -p $(BUILD_DIR)
-	@go build $(BUILD_FLAGS) -o $(BUILD_DIR)/$(APP_NAME) .
+	@go build $(BUILD_FLAGS) -o $(BUILD_DIR)/$(APP_NAME) main.go
 	@echo "Local build complete: $(BUILD_DIR)/$(APP_NAME)"
 
 # Build for all platforms
